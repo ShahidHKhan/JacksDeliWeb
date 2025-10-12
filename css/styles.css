@@ -1,0 +1,87 @@
+/* Simple reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff7ee;          /* light cream */
+  color: #222;
+}
+
+/* Header */
+header {
+  background: #8b0000;          /* deli red */
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 4px solid #b22222;
+}
+
+header h1 { font-size: 32px; }
+header p  { margin-top: 6px; }
+
+/* Simple nav as pills */
+.nav-link {
+  display: inline-block;
+  color: #8b0000;
+  background: #fff;
+  text-decoration: none;
+  border: 1px solid #e2e2e2;
+  padding: 6px 10px;
+  margin: 8px 4px 0;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+/* Main layout */
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+/* Reusable card box */
+.card {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.card h2 {
+  color: #8b0000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Lists */
+ul { margin-left: 18px; }
+.hours-list li {
+  padding: 4px 0;
+  border-bottom: 1px dotted #ddd;
+}
+.hours-list li:last-child { border-bottom: none; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 14px 10px;
+  background: #8b0000;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* Make header sticky and add a subtle shadow when scrolling */
+.site-header { position: sticky; top: 0; z-index: 1000; }
+.site-header.scrolled { box-shadow: 0 6px 20px rgba(0,0,0,.12); }
+
+/* Highlight the active nav link while scrolling */
+.nav a.active {
+  color: #fff;
+  background: #8b0000;
+  border-color: #8b0000;
+}
+
+/* Simple reveal animation */
+.card, .hero-content { opacity: 0; transform: translateY(12px); transition: opacity .5s, transform .5s; }
+.reveal { opacity: 1 !important; transform: translateY(0) !important; }
