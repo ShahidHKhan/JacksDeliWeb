@@ -28,28 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function onScroll() {
-    header?.classList.toggle("scrolled", window.scrollY > 10);
-    setActiveLink();
-    backToTop.style.display = window.scrollY > 600 ? "grid" : "none";
-  }
-
-  window.addEventListener("scroll", onScroll);
-  setActiveLink();
-
-  // ---- Reveal animations on cards/hero when they enter the viewport ----
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("reveal");
-      });
-    },
-    { threshold: 0.15 }
-  );
-  document.querySelectorAll(".card, .hero-content").forEach((el) => observer.observe(el));
-
-  // ---- Back-to-top button (styled here so you don't need extra CSS) ----
-  const backToTop = document.createElement("button");
+  // ---- Back-to-top button (create FIRST so it's defined) ----
+  let backToTop = document.createElement("button");
   backToTop.id = "toTop";
   backToTop.setAttribute("aria-label", "Back to top");
   backToTop.textContent = "↑";
@@ -71,6 +51,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   document.body.appendChild(backToTop);
+
+  function onScroll() {
+    header?.classList.toggle("scrolled", window.scrollY > 10);
+    setActiveLink();
+    // Guard in case styles are overridden or element removed
+    if (backToTop) {
+      backToTop.style.display = window.scrollY > 600 ? "grid" : "none";
+    }
+  }
+
+  window.addEventListener("scroll", onScroll);
+  setActiveLink();
+
+  // ---- Reveal animations on cards/hero when they enter the viewport ----
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("reveal");
+      });
+    },
+    { threshold: 0.15 }
+  );
+  document.querySelectorAll(".card, .hero-content").forEach((el) => observer.observe(el));
 
   // ---- Rotate hero headline every few seconds ----
   const heroH2 = document.querySelector(".hero h2");

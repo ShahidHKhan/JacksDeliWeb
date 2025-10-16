@@ -7,15 +7,25 @@
     <title>Jack's Deli | New Paltz</title>
   </head>
   <body>
-    <!-- Sticky top bar -->
+    <!-- Sticky Site Header -->
     <header class="site-header">
+      <div class="header-images">
+        <img
+          src="images/jacksdelilogo.jpg"
+          alt="Jack's Deli logo"
+          class="header-img left"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
       <div class="container">
-        <h1 class="brand">Jack's Deli</h1>
-        <nav class="nav">
-          <a href="#about">About</a>
-          <a href="#offerings">Offerings</a>
-          <a href="#hours">Hours</a>
-          <a href="#contact">Contact</a>
+        <h1 class="brand">
+          <a href="index.html" class="brand-link">Jack's Deli</a>
+        </h1>
+        <nav class="nav" aria-label="Primary">
+          <a class="active" href="menu.html" rel="noopener noreferrer">Menu</a>
+          <a href="index.html#about">About</a>
         </nav>
       </div>
     </header>
@@ -24,78 +34,99 @@
     <section class="hero">
       <div class="hero-overlay">
         <div class="container hero-content">
-          <h2>Fresh • Fast • Open Late</h2>
-          <p>Gyros, chopped cheeses, hot & cold sandwiches, and more.</p>
-          <a class="cta" href="tel:18452552244">Call (845) 255-2244</a>
+          <h2 class="hero-headline">Fresh • Fast • Open Late</h2>
+          <p class="hero-tagline">
+            Gyros, chopped cheeses, hot &amp; cold sandwiches, and more.
+          </p>
+
+          <div class="cta-row">
+            <a
+              class="btn btn-ig"
+              href="https://instagram.com/jacks_deli"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Jack's Deli on Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.75a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 18 6.75z"/>
+              </svg>
+              Instagram
+            </a>
+
+            <a
+              class="btn btn-gh"
+              href="https://www.grubhub.com/restaurant/jacks-deli-79-main-st-new-paltz/10077912"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Order on Grubhub
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <main class="container">
-      <!-- ABOUT -->
-      <section id="about" class="card">
-        <h2>About Us</h2>
-        <p>
-          Located in the heart of New Paltz, <strong>Jack’s Deli</strong> serves up
-          sizzling <strong>gyros</strong>, flavorful <strong>halal carts</strong>,
-          hearty <strong>chopped cheeses</strong>, and mouth-watering
-          <strong>hot & cold sandwiches</strong>.
-        </p>
-        <p>
-          We also carry fresh <strong>deli meats</strong> and a wide selection of
-          <strong>exotic snacks & drinks</strong>. Proudly supplied by
-          <strong>Boar’s Head</strong>.
-        </p>
-      </section>
+      <!-- ABOUT (olive panel + map) -->
+      <section id="about" class="about-section">
+        <div class="about-grid container">
+          <!-- LEFT: info panel -->
+          <div class="about-panel">
+            <h3 class="kicker">OUR</h3>
+            <h2 class="title">LOCATION</h2>
 
-      <!-- OFFERINGS -->
-      <section id="offerings" class="card split">
-        <div>
-          <h3>What We Make</h3>
-          <ul class="checklist">
-            <li>Gyros & halal cart platters</li>
-            <li>Chopped cheese sandwiches</li>
-            <li>Hot & cold deli sandwiches</li>
-          </ul>
+            <p class="mt">
+              <strong>79 Main Street</strong><br />
+              New Paltz, NY 12561
+            </p>
+
+            <div class="rule"></div>
+
+            <h3 class="subhead">HOURS</h3>
+            <ul class="panel-hours">
+              <li><strong>Mon – Thu:</strong> 9 AM – 12 AM</li>
+              <li><strong>Fri:</strong> 9 AM – 4 AM</li>
+              <li><strong>Sat:</strong> 9 AM – 4 AM</li>
+              <li><strong>Sun:</strong> 9 AM – 10 PM</li>
+            </ul>
+
+            <p class="note">
+              Grill closes daily at 2 PM. Slicers close 1 hour prior to closing.
+            </p>
+
+            <div class="rule"></div>
+
+            <h3 class="subhead">CONTACT</h3>
+            <p class="big-contact">
+              <a href="tel:18452552244" aria-label="Call Jack's Deli">(845) 255-2244</a><br />
+              <a href="mailto:contact@jacksdelinp.com">contact@jacksdelinp.com</a>
+            </p>
+          </div>
+
+          <!-- RIGHT: map -->
+          <div class="about-map">
+            <iframe
+              title="Jack's Deli – Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=79%20Main%20St,%20New%20Paltz,%20NY%2012561&output=embed">
+            </iframe>
+          </div>
         </div>
-        <div>
-          <h3>What We Carry</h3>
-          <ul class="checklist">
-            <li>Boar’s Head deli meats & cheeses</li>
-            <li>Exotic snacks & international drinks</li>
-            <li>Daily staples & grab-n-go items</li>
-          </ul>
-        </div>
-      </section>
 
-      <!-- HOURS -->
-      <section id="hours" class="card">
-        <h2>Hours</h2>
-        <ul class="hours">
-          <li><span>Saturday </span><span>9 AM – 4 AM</span></li>
-          <li><span>Sunday </span><span>9 AM – 10 PM</span></li>
-          <li><span>Monday </span><span>9 AM – 12 AM </span></li>
-          <li><span>Tuesday </span><span>9 AM – 3 AM</span></li>
-          <li><span>Wednesday </span><span>9 AM – 12 AM</span></li>
-          <li><span>Thursday </span><span>9 AM – 12 AM</span></li>
-          <li><span>Friday </span><span>9 AM – 4 AM</span></li>
-        </ul>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="card">
-        <h2>Visit Us</h2>
-        <p><strong>Address:</strong> 79 Main St, New Paltz, NY 12561</p>
-        <p><strong>Phone:</strong> <a href="tel:18452552244">(845) 255-2244</a></p>
-        <a class="cta ghost" href="tel:18452552244">Call Now</a>
+        <p class="prices-note container">
+          Please note menu prices are subject to change and may not be updated on site.
+        </p>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <div class="container">
         <p>&copy; 2025 Jack’s Deli • New Paltz, NY</p>
       </div>
     </footer>
+
     <script src="js/main.js" defer></script>
   </body>
 </html>
