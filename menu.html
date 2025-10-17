@@ -41,80 +41,113 @@
   </section>
 
   <main class="container">
-    <!-- Intro -->
-    <section class="card">
-      <h2 class="section-title">Made to Order</h2>
-      <p>Ask about combos, add-ons, and halal options. Prices may vary.</p>
-    </section>
+  <!-- Search Menu Section -->
+  <section class="card" id="search-menu">
+    <h2 class="section-title">Search Menu</h2>
+    <p>Find your favorite sandwiches, gyros, or snacks!</p>
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="menuSearchInput" 
+        placeholder="Search for an item..."
+        aria-label="Search Menu"
+      />
+      <button id="menuSearchButton">Search</button>
+    </div>
+  </section>
 
-    <!-- Gyros & Platters -->
-    <section class="card">
-      <h2 class="section-title">Gyros &amp; Platters</h2>
-      <ul class="menu-list">
-        <li><span class="item">Chicken Gyro</span><span class="price">$10.99</span></li>
-        <li><span class="item">Lamb Gyro</span><span class="price">$11.49</span></li>
-        <li><span class="item">Falafel Platter (V)</span><span class="price">$10.49</span></li>
-      </ul>
-    </section>
+  <!-- Favorites Gallery -->
+  <section class="menu-gallery">
+    <h2 class="section-title">Favorites!</h2>
+    <div class="gallery-grid">
+      <figure>
+        <img src="images/jacksdelichoppedcheese.jpg" alt="Jack's Deli Chopped Cheese" loading="lazy" decoding="async" />
+        <figcaption>Chopped Cheese</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jacksdelifalafel.jpg" alt="Jack's Deli Falafel Platter" loading="lazy" decoding="async" />
+        <figcaption>Falafel Platter</figcaption>
+      </figure>
+      <figure>
+        <img src="images/jacksdelicoldsandwich.jpg" alt="Jack's Deli Cold Cut Sandwich" loading="lazy" decoding="async" />
+        <figcaption>Cold Cut</figcaption>
+      </figure>
+    </div>
+  </section>
+  <!-- ============================= -->
+  <!-- Full Menu Tables -->
+  <!-- ============================= -->
+  <section class="menu-tables">
+    <h2 class="section-title">Full Menu</h2>
 
-    <!-- Chopped Cheese & Hot Sandwiches -->
-    <section class="card">
-      <h2 class="section-title">Chopped Cheese &amp; Hot Sandwiches</h2>
-      <ul class="menu-list">
-        <li><span class="item">Classic Chopped Cheese</span><span class="price">$9.99</span></li>
-        <li><span class="item">Philly Cheesesteak</span><span class="price">$10.99</span></li>
-        <li><span class="item">Chicken Cutlet Parm</span><span class="price">$10.49</span></li>
-      </ul>
-    </section>
+    <!-- Hot Sandwiches -->
+    <div class="menu-category">
+      <h3>Hot Sandwiches</h3>
+      <table class="menu-table">
+        <tr><th>Item</th><th>Price</th></tr>
+        <tr><td>Chicken Cutlet</td><td>$9.99 / $11.99</td></tr>
+        <tr><td>Grilled Chicken</td><td>$9.99 / $11.99</td></tr>
+        <tr><td>Chopped Cheese</td><td>$9.99 / $11.99</td></tr>
+        <tr><td>Philly Cheesesteak</td><td>$9.99 / $11.99</td></tr>
+        <tr><td>Meatball Sub</td><td>$9.99 / $11.99</td></tr>
+        <tr><td>Grilled Cheese</td><td>$4.99</td></tr>
+        <tr><td>Quesadilla</td><td>$7.99</td></tr>
+      </table>
+    </div>
 
-    <!-- Cold Deli -->
-    <section class="card">
-      <h2 class="section-title">Cold Deli Sandwiches (Boar’s Head)</h2>
-      <ul class="menu-list">
-        <li><span class="item">Turkey &amp; Swiss</span><span class="price">$9.49</span></li>
-        <li><span class="item">Ham &amp; American</span><span class="price">$9.49</span></li>
-        <li><span class="item">Italian Combo</span><span class="price">$10.99</span></li>
-      </ul>
-    </section>
+    <!-- Cold Sandwiches -->
+    <div class="menu-category">
+      <h3>Cold Sandwiches</h3>
+      <table class="menu-table">
+        <tr><th>Item</th><th>Price</th></tr>
+        <tr><td>Italian Combo</td><td>$9.99 / $13.00</td></tr>
+        <tr><td>Turkey B.L.T.</td><td>$9.99 / $12.00</td></tr>
+        <tr><td>Roast Beef</td><td>$10.00 / $13.00</td></tr>
+        <tr><td>Honey Turkey</td><td>$10.00 / $12.00</td></tr>
+        <tr><td>Home-Cooked Turkey</td><td>$11.00 / $13.00</td></tr>
+        <tr><td>Home-Cooked Roast Beef</td><td>$12.00 / $14.00</td></tr>
+        <tr><td>Tuna Sandwich</td><td>$10.00 / $14.00</td></tr>
+        <tr><td>Chicken Caesar</td><td>$10.00 / $12.00</td></tr>
+      </table>
+    </div>
 
-    <!-- Sides -->
-    <section class="card">
-      <h2 class="section-title">Sides &amp; Extras</h2>
-      <ul class="menu-list">
-        <li><span class="item">Fries</span><span class="price">$3.99</span></li>
-        <li><span class="item">Mozzarella Sticks</span><span class="price">$6.49</span></li>
-        <li><span class="item">Add Avocado</span><span class="price">$1.49</span></li>
-      </ul>
-    </section>
+    <!-- Halal Food -->
+    <div class="menu-category">
+      <h3>Halal Food</h3>
+      <table class="menu-table">
+        <tr><th>Item</th><th>Price</th></tr>
+        <tr><td>Chicken over Rice</td><td>$9.99</td></tr>
+        <tr><td>Lamb over Rice</td><td>$10.99</td></tr>
+        <tr><td>Combo over Rice</td><td>$11.99</td></tr>
+        <tr><td>Falafel over Rice</td><td>$9.99</td></tr>
+        <tr><td>Chicken Gyro</td><td>$10.00</td></tr>
+        <tr><td>Lamb Gyro</td><td>$11.00</td></tr>
+      </table>
+    </div>
 
-    <!-- Drinks -->
-    <section class="card">
-      <h2 class="section-title">Drinks &amp; Snacks</h2>
-      <p>Exotic sodas, international chips, and more available in-store.</p>
-    </section>
+    <!-- Fried Food -->
+    <div class="menu-category">
+      <h3>Fried Food</h3>
+      <table class="menu-table">
+        <tr><th>Item</th><th>Price</th></tr>
+        <tr><td>Chicken Tender (4pcs/8pcs)</td><td>$6.99 / $10.99</td></tr>
+        <tr><td>Wings (6pcs/8pcs)</td><td>$7.99 / $9.99</td></tr>
+        <tr><td>Mozzarella Sticks</td><td>$7.50</td></tr>
+        <tr><td>Onion Rings</td><td>$4.49</td></tr>
+        <tr><td>Curly Fries</td><td>$4.99</td></tr>
+        <tr><td>Home-Cut Fries</td><td>$4.99</td></tr>
+        <tr><td>Samosa (4pcs/8pcs)</td><td>$4.99 / $9.99</td></tr>
+        <tr><td>Beef Empanada</td><td>$3.99</td></tr>
+        <tr><td>Chicken Empanada</td><td>$3.99</td></tr>
+        <tr><td>Cheese Empanada</td><td>$3.99</td></tr>
+      </table>
+    </div>
 
-    <!-- Menu Gallery -->
-    <section class="menu-gallery">
-        <h2 class="section-title">Favorites!</h2>
-        <div class="gallery-grid">
-            <figure>
-            <img src="images/jacksdelichoppedcheese.jpg" alt="Jack's Deli Chopped Cheese" loading="lazy" decoding="async" />
-            <figcaption>Chopped Cheese Sandwich</figcaption>
-            </figure>
+  </section>
 
-            <figure>
-            <img src="images/jacksdelifalafel.jpg" alt="Jack's Deli Falafel Platter" loading="lazy" decoding="async" />
-            <figcaption>Falafel Platter</figcaption>
-            </figure>
+</main>
 
-            <figure>
-            <img src="images/jacksdelicoldsandwich.jpg" alt="Jack's Deli Cold Cut Sandwich" loading="lazy" decoding="async" />
-            <figcaption>Cold Cut Sandwich</figcaption>
-            </figure>
-        </div>
-    </section>
 
-  </main>
 
   <!-- Shared Footer -->
   <footer class="site-footer">

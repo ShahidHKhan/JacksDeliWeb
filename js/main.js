@@ -175,3 +175,76 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("menuSearchInput");
+  const button = document.getElementById("menuSearchButton");
+
+  if (!input || !button) return; // not on this page
+
+  button.addEventListener("click", async () => {
+    const query = input.value.trim();
+    if (!query) {
+      alert("Please enter a search term!");
+      return;
+    }
+
+    try {
+      const res = await fetch(`http://127.0.0.1:8000/menu/search?query=${encodeURIComponent(query)}`);
+      if (!res.ok) throw new Error("Failed to fetch results");
+      const items = await res.json();
+
+      // Render results below the search box
+      displaySearchResults(items);
+    } catch (err) {
+      console.error(err);
+      alert("Error fetching search results.");
+    }
+  });
+});
+
+function displaySearchResults(items) {
+  // remove any old results
+  let oldSection = document.getElementById("search-results");
+  if (oldSection) oldSection.remove();
+
+  const section = document.createElement("section");
+  section.id = "search-results";
+  section.classList.add("card");
+  section.innerHTML = `<h2 class="section-title">Results</h2>`;
+
+  if (!items.length) {
+  section.innerHTML += `
+    <p class="no-results">❌ Item not found. Please try another search.</p>
+  `;
+}
+ else {
+    const ul = document.createElement("ul");
+    ul.classList.add("menu-list");
+
+    items.forEach(item => {
+      const li = document.createElement("li");
+      const halalStatus =
+        item.category === "Halal"
+          ? `<span class="halal-pill halal">Halal</span>`
+          : `<span class="halal-pill non-halal">Non-Halal</span>`;
+
+      li.innerHTML = `
+        <span class="item">${item.name}</span>
+        <span class="category">${halalStatus}</span>
+        <span class="price">$${(item.price_cents / 100).toFixed(2)}</span>
+      `;
+      ul.appendChild(li);
+    });
+
+    section.appendChild(ul);
+  }
+
+  // insert results right before the Favorites section
+const favoritesSection = document.querySelector(".menu-gallery");
+if (favoritesSection) {
+  favoritesSection.parentNode.insertBefore(section, favoritesSection);
+} else {
+  document.querySelector("main").appendChild(section);
+}
+}
