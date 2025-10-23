@@ -7,3 +7,8 @@ Website for Jacks Deli, located in New Paltz, NY.
 - Language = Python
 - Database = MySQL
 - Tools = fastapi, uvicorn, sqlalchemy, pymysql, pydantic
+
+
+
+extra
+*python -m uvicorn backend.main:app --reload*
